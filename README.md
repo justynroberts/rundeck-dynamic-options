@@ -1,4 +1,3 @@
-
 # RunDeck Dynamic Options
 
 > Convert server based comma separated lists to local API serving
@@ -31,15 +30,14 @@ Follow specific rules for your platform on running python as a service, but for 
 
 `sudo nano /etc/systemd/system/rundeck-options.service` 
 
-`[Unit]
-Description=Rundeck-dynamic-options
-After=multi-user.target
-[Service]
-Type=simple
-Restart=always
-ExecStart=/usr/bin/python3 /~/work/rundeck-dynamic-options.py ~/work/options/ 3000
-[Install]
-WantedBy=multi-user.target`
+    [Unit]  
+    Description=My test service  
+    After=multi-user.target[Service]  
+    Type=simple  
+    Restart=always  
+    ExecStart=/usr/bin/python3 /~/work/rundeck-dynamic-options.py ~/work/options/ 3000
+    [Install]  
+    WantedBy=multi-user.target
 
 `sudo systemctl daemon-reload`
 `sudo systemctl start rundeck-options.service`
