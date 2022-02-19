@@ -40,6 +40,7 @@ Follow specific rules for your platform on running python as a service, but for 
     WantedBy=multi-user.target
 
 `sudo systemctl daemon-reload`
+
 `sudo systemctl start rundeck-options.service`
 
 ## **Usage**
