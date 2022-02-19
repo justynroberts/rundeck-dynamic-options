@@ -1,10 +1,12 @@
+#!/usr/bin/python
+# supplied as-is, with no warranty or ownership implied.
+# Jroberts (2022)
+
+import csv,json,sys
 from flask import Flask
-import csv
 
-import json
-
-basedir ="/Users/jroberts/work/code/rundeck-dynamic-options/options/"
-
+basedir= sys.argv[1] 
+portnumber= sys.argv[2] 
 app = Flask(__name__)
 @app.route("/options/<listname>")
 def showlist(listname):
@@ -14,15 +16,10 @@ def showlist(listname):
             data = list(reader)
             listToStr = ' '.join([str(elem) for elem in data])
             jsonString = json.dumps(listToStr)
-            #resp = app.make_response( "{ ""name"": ""name"",""name2"": ""name2"" }")
             resp = app.make_response(listToStr)
             resp.headers['Content-Type'] = 'application/json'
             return (resp)
-
     except:
-            return  listname + " was not found"
-
-
- 
+            return  "List " +listname + " threw an error. Is it there ? Is it formatted well?"
 if __name__ == "__main__":
-    app.run(debug=False,host='localhost', port=3000)
+    app.run(debug=False,host='localhost', port=portnumber)
