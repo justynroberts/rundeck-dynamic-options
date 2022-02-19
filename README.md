@@ -21,7 +21,9 @@ Potentially this file could be installed elsewhere other than the server, but we
 Run application with `python3 rundeck-dynamic-options.py directory port`
 where `directory` is the location of your lists 
 
-eg. `python3 rundeck-dynamic-options.py ~/work/options 3000`
+eg. `python3 rundeck-dynamic-options.py ~/work/options/ 3000`
+
+command line arguments are mandatory.
 
 **Run application as a service**
 Follow specific rules for your platform on running python as a service, but for example to run python file as a linux service on RHEL/CENTOS -
