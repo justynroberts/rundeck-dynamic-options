@@ -3,7 +3,7 @@
 # Jroberts (2022)
 
 import csv,json,sys,ast
-from flask import Flask,jsonify
+from flask import Flask
 
 basedir= sys.argv[1] 
 portnumber= sys.argv[2] 
