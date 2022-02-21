@@ -2,8 +2,8 @@
 # supplied as-is, with no warranty or ownership implied.
 # Jroberts (2022)
 
-import csv,json,sys
-from flask import Flask
+import csv,json,sys,ast
+from flask import Flask,jsonify
 
 basedir= sys.argv[1] 
 portnumber= sys.argv[2] 
@@ -15,10 +15,7 @@ def showlist(listname):
             reader = csv.reader(f)
             data = list(reader)
             listToStr = ' '.join([str(elem) for elem in data])
-            jsonString = json.dumps(listToStr)
-            resp = app.make_response(listToStr)
-            resp.headers['Content-Type'] = 'application/json'
-            return (resp)
+            return (listToStr)
     except:
             return  "List " +listname + " threw an error. Is it there ? Is it formatted well?"
 if __name__ == "__main__":
