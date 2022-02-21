@@ -15,7 +15,7 @@ def showlist(listname):
             reader = csv.reader(f)
             data = list(reader)
             listToStr = ' '.join([str(elem) for elem in data])
-            return (listToStr)
+            return (str(listToStr).replace("'", '"'), 200, {'Content-Type': 'application/json'})
     except:
             return  "List " +listname + " threw an error. Is it there ? Is it formatted well?"
 if __name__ == "__main__":
