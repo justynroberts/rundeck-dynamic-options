@@ -16,7 +16,7 @@ Potentially this file could be installed elsewhere other than the server, but we
 
 ## **Installation.**
 
-**git clone** this to a location on your rundeck server
+`git clone` this to a location on your rundeck server
 Run application with `python3 rundeck-dynamic-options.py directory port`
 where `directory` is the location of your lists 
 
